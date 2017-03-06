@@ -7,6 +7,7 @@
  ******************************************************************************/
 
 #include <stdlib.h>
+#include <string.h>
 #include "testFunctions.h"
 
 
@@ -39,7 +40,7 @@ ErrCode TestNr(char *numberOfTimes) {
 // Test whether an argument contains only one character:
 ErrCode TestChar(char *printChar) {
   ErrCode fout = NO_ERR;
-  if(sizeof(*printChar) != 1){
+  if(strlen(printChar) != 1){
     fout = ERR_CHAR;
   }
   // Add the missing code
