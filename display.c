@@ -7,6 +7,7 @@
  ******************************************************************************/
 
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include "displayFunctions.h"
 
@@ -24,6 +25,7 @@ int main(int argc, char *argv[]) {
     printChar = argv[3][0];
     
     PrintCharacters(printMethod, argcl, printChar);  // Print character printChar argcl times using method printMethod
+    sleep(3);
   }
   
   printf("\n");  // Newline at end
