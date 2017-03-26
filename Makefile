@@ -7,18 +7,12 @@ display: display.o displayFunctions.o testFunctions.o
 
 # Compile C-files and create object files (.o).
 # The option -c ensures no linking takes place:
-display.o: display.c displayFunctions.h errorCode.h
+display.o: display.c displayFunctions.h errorCodes.h
 	gcc -c -Wall display.c
 
-displayFunctions.o: displayFunctions.c displayFunctions.h testFunctions.h errorCode.h
+displayFunctions.o: displayFunctions.c displayFunctions.h testFunctions.h errorCodes.h
 	gcc -c -Wall displayFunctions.c
 
-testFunctions.o: testFunctions.c testFunctions.h errorCode.h
+testFunctions.o: testFunctions.c testFunctions.h errorCodes.h
 	gcc -c -Wall testFunctions.c
-
-clean:
-	rm -f *.o
-
-cleanall: clean
-	rm -f display
 

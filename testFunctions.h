@@ -10,7 +10,7 @@
 #ifndef testFunctionsH
 #define testFunctionsH
 
-#include "errorCode.h"
+#include "errorCodes.h"
 
 ErrCode TestType(char *printMethod);
 /*

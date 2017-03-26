@@ -9,7 +9,7 @@
 #ifndef displayFunctionsH
 #define displayFunctionsH
 
-#include "errorCode.h"
+#include "errorCodes.h"
 
 ErrCode SyntaxCheck(int argc, char **argv);
 /*

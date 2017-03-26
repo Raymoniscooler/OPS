@@ -20,7 +20,10 @@ ErrCode SyntaxCheck(int argc, char **argv) {
   } else {
     errCode = TestType(argv[1]);                        // Test whether argument 1 has the correct value (print type)
     if(errCode == NO_ERR) errCode = TestNr(argv[2]);    // Test whether argument 2 contains a positive integer (number of times)
-    if(errCode == NO_ERR) errCode = TestChar(argv[3]);  // Test whether argument 3 contains only one character (print character)
+    if(errCode == NO_ERR) errCode = TestNice(argv[3]);  // Test whether argument 2 has a nice value    
+    if(errCode == NO_ERR) errCode = TestChar(argv[4]);  // Test whether argument 3 contains only one character (print character)
+    if(errCode == NO_ERR) errCode = TestChar(argv[5]);  // Test whether argument 3 contains only one character (print character)
+    if(errCode == NO_ERR) errCode = TestChar(argv[6]);  // Test whether argument 3 contains only one character (print character)
   }
   return errCode;
 }
@@ -37,6 +40,9 @@ void DisplayError(ErrCode errCode) {
   case ERR_NR:
     printf("\nNumber of times is not a positive integer.\n");
     break;
+  case ERR_NICE:
+    printf("\nNice increment is not valid.\n");
+    break;
   case ERR_CHAR:
     printf("\nPrint character contains more than one character.\n");
     break;
@@ -45,10 +51,11 @@ void DisplayError(ErrCode errCode) {
   }
   
   printf("\nCorrect syntax:\n");
-  printf("  ./display <print type> <number of times> <print character>\n\n");
+  printf("  ./display <print type> <number of times> <nice increment> <print character>\n\n");
   printf("  first parameter <print type>: e, p or w\n");
   printf("  second parameter <number of times>: positive integer\n");
-  printf("  third parameter <print character>: a single character\n");
+  printf("  third parameter <nice increment>: positive integer lower than 19\n");
+  printf("  fourth parameter <print character>: a single character\n");
   printf("\n");  // Newline at end
 }
 

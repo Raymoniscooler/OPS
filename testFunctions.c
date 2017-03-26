@@ -36,6 +36,16 @@ ErrCode TestNr(char *numberOfTimes) {
   return fout;
 }
 
+ErrCode TestNice(char *niceIncrement){
+  ErrCode fout = NO_ERR;
+  int converter = atoi(niceIncrement);
+  if((converter < 0) || (converter > 9)){
+    fout = ERR_NICE;
+  }
+
+  return fout;
+}
+
 
 // Test whether an argument contains only one character:
 ErrCode TestChar(char *printChar) {
